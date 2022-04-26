@@ -1,18 +1,26 @@
 function FizzBuzz() {
-    for (let i = 1; i <= 100; i ++){
-        if (i % 3 === 0 && i % 5 === 0) {
-            console.log("FizzBuzz")
+    let divisors = [3, 5, 7]
+    let words = ["Fizz", "Buzz", "Bang"]
+    
+    for (let i = 1; i <= 100;  i++)
+    {
+        let toPrint = ""
+        for (let j = 0; j < divisors.length; j++)
+        {
+            if (i % divisors[j] === 0) 
+            {
+                toPrint += words[j] 
+            }
         }
-        else if (i % 3 === 0) {
-            console.log("Fizz")
-        }
-        else if (i % 5 === 0) {
-            console.log("Buzz")
+        if (toPrint === "") 
+        {
+            console.log(i)
         }
         else {
-            console.log(i)
+            console.log(toPrint)
         }
     }
 }
+
 
 FizzBuzz();
